@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Student Examination System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h2>🎓 ExamPortal</h2>
+        <span>Online Examination System</span>
+    </header>
+
+    <main class="container">
+
+        <section id="loginSection" class="card">
+            <h1>Welcome to ExamPortal</h1>
+            <p>Enter your details to start your examination.</p>
+
+            <input type="text" id="studentName"
+                placeholder="Enter your name">
+
+            <input type="text" id="rollNumber"
+                placeholder="Enter your roll number">
+
+            <button onclick="startExam()">Start Examination</button>
+        </section>
+
+        <section id="examSection" class="card" style="display:none;">
+
+            <div class="exam-header">
+                <div>
+                    <h2>Student Examination</h2>
+                    <p id="studentInfo"></p>
+                </div>
+                <div class="timer">
+                    Time Left: <span id="timer">05:00</span>
+                </div>
+            </div>
+
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+
+            <h3 id="questionNumber"></h3>
+            <h2 id="questionText"></h2>
+
+            <div id="options"></div>
+
+            <div class="navigation">
+                <button id="previousBtn" onclick="previousQuestion()">
+                    Previous
+                </button>
+
+                <button id="nextBtn" onclick="nextQuestion()">
+                    Next
+                </button>
+
+                <button id="submitBtn" onclick="submitExam()"
+                    style="display:none;">
+                    Submit Exam
+                </button>
+            </div>
+        </section>
+
+        <section id="resultSection" class="card" style="display:none;">
+            <h1>Examination Result</h1>
+
+            <div class="result-circle">
+                <h2 id="percentage">0%</h2>
+            </div>
+
+            <h2 id="resultMessage"></h2>
+
+            <div class="result-details">
+                <p id="studentResult"></p>
+                <p id="score"></p>
+                <p id="correctAnswers"></p>
+                <p id="wrongAnswers"></p>
+            </div>
+
+            <button onclick="location.reload()">Take Another Exam</button>
+        </section>
+
+    </main>
+
+    <footer>
+        ExamPortal | Student Online Examination System | 2026
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
